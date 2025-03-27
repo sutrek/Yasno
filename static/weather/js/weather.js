@@ -19,7 +19,6 @@ async function render_weather() {
       <div class="card-body">
         <h5 class="card-title">{ГОРОД}</h5>
         <p class="card-text">{ПОГОДА}</p>
-        <p class="card-text"><small class="text-body-secondary">{ПОСЛЕДНЕЕОБНОВЛЕНИЕ}</small></p>
       </div>
     </div>
   </div>
@@ -29,10 +28,10 @@ async function render_weather() {
     let container = document.getElementById("weather");
     weather.forEach(element => {
         let weather = template
-            .replace("{ГОРОД}", element.name)
-            .replace("{ПОГОДА}", element.description)
+            .replace("{ГОРОД}", element.city)
+            .replace("{ПОГОДА}", element.Temperature)
+            .replace("{ОСАДКИ}", element.falllout)
             .replace("{КАРТИНКА}", element.photo)
-            .replace("{ПОСЛЕДНЕЕОБНОВЛЕНИЕ}", element.DCF);  
         container.innerHTML += weather;
     });
 }
