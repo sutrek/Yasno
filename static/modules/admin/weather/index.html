@@ -4,16 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ясно</title>
+    <title>Ясно(</title>
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <script src="/static/js/bootstrap.min.js"></script>
-    <script src="/static/weather/js/weather.js"></script>
+    <script src="/static/modules/admin/weather/weather.js"></script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="/static/assets/Logo.jpg" width="25px" height="25px" alt="..."> Ясно</a>
+            <a class="navbar-brand" href="#"><img src="/static/assets/Logo.jpg" width="25px" height="25px" alt="...">
+                Ясно(Admin)</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -38,21 +39,33 @@
             </div>
         </div>
     </nav>
-    <div class="container mt-2" style="min-height: 100%;">
-        <div>
-            <div class="row justify-content-center ms-1 me-1" id="weather">
-                <!--Погода-->
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-start">id</th>
+                        <th scope="col" class="text-start">Город</th>
+                        <th scope="col" class="text-start">Температура</th>
+                        <th scope="col" class="text-start">Осадки</th>
+                        <th scope="col" class="text-start">Фото</th>
+                    </tr>
+                </thead>
+                <tbody id="weather">
+                    <!--weather-->
+                </tbody>
+            </table>
+            <div class=" text-start"> 
+                <a class="btn btn-primary" href="form.html">Добавить запись</a>
             </div>
-        </div>
-    </div>
-    <footer class="footer fixed-bottom" style="background-color: rgb(0, 165, 190)">
-        <div class="container p-4">
-            <div class="d-flex flex-column">
-                <h4>2025г. Компания Ясно</h4>
-                <a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">Наши контакты</a>
+
+        <footer class="footer fixed-bottom" style="background-color: rgb(0, 165, 190)">
+            <div class="container p-4">
+                <div class="d-flex flex-column">
+                    <h4>2025г. Компания Ясно</h4>
+                    <a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                        href="#">Наши контакты</a>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
 </body>
 
