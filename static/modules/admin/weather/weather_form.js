@@ -18,7 +18,7 @@ async function update_form() {
     }
     document.getElementById("_button").innerText = "Редактировать";
     document.getElementById("_button").onclick = edit_weather;
-    let weather = await get_weather(id); // Заменили product на weather
+    let weather = await get_weather(id); 
     document.getElementById("city").value = weather["city"];
     document.getElementById("Temperature").value = weather["Temperature"];
     document.getElementById("falllout").value = weather["falllout"];
