@@ -25,7 +25,7 @@ def get_weather():
  
 
 @app.route("/api/weather", methods=["POST"])
-def add_product():
+def add_weather():
     if request.method == "POST":
         form = request.form
         with engine.connect() as connection:
@@ -38,7 +38,44 @@ def add_product():
             connection.commit()
             return jsonify(result.fetchone()._asdict())
         return jsonify({"message": "Error"})
-
+    
+@app.route("/api/weather/<id>", methods=["GET", "DELETE", "PUT"])
+def weather(id: int):
+    if request.method == "GET":
+        with engine.connect() as connection:
+            query = text("SELECT * FROM weather WHERE id = :id")
+            query = query.bindparams(bindparam("id", id))
+            result = connection.execute(query)
+            return jsonify(result.fetchone()._asdict())
+        return jsonify({"message": "Error"})
+    
+    if request.method == "DELETE":
+        with engine.connect() as connection:
+            query = text("DELETE FROM weather WHERE id = :id;")
+            query = query.bindparams(bindparam("id", id))
+            result = connection.execute(query)
+            connection.commit()
+            return jsonify({"message": "Success", "id": id})
+        return jsonify({"message": "Error"})
+ 
+    if request.method == "PUT":
+        form = request.form
+        with engine.connect() as connection:
+            query = text("UPDATE weather SET city = :city, Temperature = :Temperature, falllout = :falllout, photo = :photo WHERE id = :id")
+            query = query.bindparams(bindparam("city", form.get("city")))
+            query = query.bindparams(bindparam("Temperature", form.get("Temperature")))
+            query = query.bindparams(bindparam("falllout", form.get("falllout")))
+            query = query.bindparams(bindparam("photo", form.get("photo")))
+            query = query.bindparams(bindparam("id", id))
+            connection.execute(query)
+            connection.commit()
+ 
+            query = text("SELECT * FROM weather WHERE id = :id")
+            query = query.bindparams(bindparam("id", id))
+            result = connection.execute(query)
+            return jsonify(result.fetchone()._asdict())
+        return jsonify({"message": "Error"})
+ 
 
 def main():
     app.run("localhost", 8000, True)

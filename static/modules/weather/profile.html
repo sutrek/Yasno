@@ -13,7 +13,7 @@
     <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="/static/assets/Logo.jpg" width="25px" height="25px" alt="...">
-                Ясно(Admin)</a>
+                Ясно</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -22,42 +22,47 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Главная</a>
+                        <a class="nav-link active" aria-current="page"
+                            href="/static/modules/weather/index.html">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Погода</a>
+                        <a class="nav-link" href="/static/modules/weather/index.html">Погода</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Профиль</a>
+                        <a class="nav-link" href="/static/modules/weather/profile.html">Профиль</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="поиск города" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Искать</button>
+                    <button class="btn btn-primary" type="submit">Искать</button>
                 </form>
             </div>
         </div>
     </nav>
-    <form id="weather_form" method="POST">
-        <div class="form-group">
-            <label for="city">Ввод названия города:</label>
-            <input name="city" type="text" class="form-control" id="city" placeholder="Введите город">
+    <div class="container mt-5">
+        <div class="row justify-content-between">
+            <div class="col-md-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="/static/assets/asdm.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Админ</h5>
+                        <p class="card-text">Войти как админ</p>
+                        <a href="/static/modules/admin/weather/index.html" class="btn btn-primary">Продолжить</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="/static/assets/usr.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Пользователь</h5>
+                        <p class="card-text">Войти как пользователь.</p>
+                        <a href="#" class="btn btn-primary">Продолжить</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="Temperature">Ввод температуры:</label>
-            <input name="Temperature" type="text" class="form-control" id="Temperature" placeholder="Введите температуру">
-        </div>
-        <div class="form-group">
-            <label for="falllout">Ввод осадков:</label>
-            <input name="falllout" type="text" class="form-control" id="falllout" placeholder="Введите осадки">
-        </div>
-        <div class="form-group">
-            <label for="photo">Фото:</label>
-            <input name="photo" type="text" class="form-control" id="photo" placeholder="Фото">
-        </div>
-    </form>
-    <button id="_button" class="btn btn-success mt-2">Редактировать</button>
-    
+    </div>
     <footer class="footer fixed-bottom" style="background-color: rgb(0, 165, 190)">
         <div class="container p-4">
             <div class="d-flex flex-column">
@@ -66,8 +71,6 @@
                     href="#">Наши контакты</a>
             </div>
         </div>
-    </footer>
-    <script src="/static/modules/admin/weather/weather_form.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script src="/static/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="/static/assets/Logo.jpg" width="25px" height="25px" alt="..."> Ясно</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/static/modules/weather/index.html">Погода</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/static/modules/weather/profile.html">Профиль</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="поиск города" aria-label="Search">
+                    <button class="btn btn-primary" type="submit">Искать</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-2" style="min-height: 100%;">
+        <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column" style="max-width: 400px;">
+                <div class="img1">
+                <img class="img-fluid" src="/static/assets/sun.jpg">
+            </div>
+                <h2 class="text-center">Ясно</h2>
+                <p class="text-center">Погода — радость жизни, яркие краски в каждом городе</p>
+                <a class="btn btn-warning" href="/static/modules/weather/index.html">Погода</a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer fixed-bottom" style="background-color: rgb(0, 165, 190)">
+        <div class="container p-4">
+            <div class="d-flex flex-column">
+                <h4>2025г. Компания Ясно</h4>
+                <a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">Наши контакты</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

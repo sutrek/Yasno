@@ -3584,8 +3584,8 @@ fieldset:disabled .btn {
 
 .btn-warning {
     --bs-btn-color: #000;
-    --bs-btn-bg: #ffc107;
-    --bs-btn-border-color: #ffc107;
+    --bs-btn-bg: rgb(95, 166, 233);
+    --bs-btn-border-color: #000000;
     --bs-btn-hover-color: #000;
     --bs-btn-hover-bg: #ffca2c;
     --bs-btn-hover-border-color: #ffc720;
